@@ -1,0 +1,193 @@
+body {
+    font-family: 'Inter', sans-serif;
+    /* Warm gradient background */
+    background: linear-gradient(145deg, #ff3e5e, #f1d94f, #ff3e5e);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to the top slightly for better viewing */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+    padding: 30px;
+    border-radius: 20px; /* More rounded corners for cuteness */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    color: #FF6347; /* A vibrant, warm red-orange */
+    margin-bottom: 25px;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.input-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.input-section input {
+    flex-grow: 1;
+    padding: 12px 15px;
+    border: 2px solid #FF8C00; /* Warm orange border */
+    border-radius: 15px; /* Rounded input */
+    outline: none;
+    font-size: 1rem;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+.input-section input:focus {
+    border-color: #FF4500; /* Darker orange on focus */
+}
+
+.input-section button {
+    background-color: #FF6347; /* Warm red-orange */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 15px; /* Rounded button */
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.input-section button:hover {
+    background-color: #FF4500; /* Darker red-orange on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+.task-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.task-list li {
+    background-color: #FFFACD; /* Light cream/yellow */
+    padding: 15px 20px;
+    margin-bottom: 12px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow for list items */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.task-list li:hover {
+    transform: translateY(-2px);
+}
+
+.task-list li.completed {
+    background-color: #E0FFFF; /* Light cyan for completed tasks */
+    text-decoration: line-through;
+    color: #696969; /* Grey text for completed */
+    opacity: 0.8;
+}
+
+.task-text {
+    flex-grow: 1;
+    text-align: left;
+    font-size: 1.1rem;
+    color: #4B0082; /* Dark purple for text, good contrast */
+    word-break: break-word; /* Ensure long words wrap */
+    padding-right: 10px; /* Space before buttons */
+}
+
+.task-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.task-buttons button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex; /* Use flexbox for button content */
+    justify-content: center;
+    align-items: center;
+}
+
+.task-buttons .check-btn {
+    background-color: #87CEEB; /* Sky blue */
+    color: white;
+    padding: 8px; /* Adjust padding for icon */
+}
+
+.task-buttons .check-btn:hover {
+    background-color: #6A5ACD; /* Slate blue */
+    transform: scale(1.05);
+}
+
+.task-buttons .check-btn svg {
+    width: 20px; /*checkmark icon */
+    height: 20px;
+    fill: currentColor; /* Inherit color from button text color */
+}
+
+.task-buttons .remove-btn {
+    background-color: #FF69B4; /* Hot pink */
+    color: white;
+}
+
+.task-buttons .remove-btn:hover {
+    background-color: #FF1493; /* Deep pink */
+    transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+        border-radius: 15px;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .input-section {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .input-section button {
+        width: 100%;
+    }
+
+    .task-list li {
+        flex-direction: column; /* Stack text and buttons on small screens */
+        align-items: flex-start;
+        padding: 15px;
+        margin-bottom: 10px;
+    }
+
+    .task-text {
+        margin-bottom: 10px; /* Space between text and buttons */
+        width: 100%; /* Take full width */
+        padding-right: 0;
+    }
+
+    .task-buttons {
+        width: 100%; /* Make buttons take full width */
+        justify-content: stretch; /* Stretch buttons to fill width */
+    }
+
+    .task-buttons button {
+        flex-grow: 1; /* Allow buttons to grow */
+        padding: 10px;
+    }
+}
